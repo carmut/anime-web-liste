@@ -1,0 +1,24 @@
+stages:
+  - build
+  - deploy
+
+build_admin:
+  stage: build
+  image: pockost/php:8.1-cli-bookworm
+  script:
+    - composer install --no-scripts --no-interaction --optimize-autoloader
+  only:
+    changes:
+      - composer.json
+      - composer.lock
+  artifacts:
+    paths:
+      - vendor
+
+deploy admin:
+  stage: deploy
+  image:
+    name: pockost/phploy:4.9.3
+    entrypoint: [""]
+  script:
+    - phploy -s admin
