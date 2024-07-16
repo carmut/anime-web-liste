@@ -1,0 +1,38 @@
+/* style global side-menu */
+#side-menu{
+    background: black;
+    width: 25vh;
+    height: 90vh;
+    border-top: 1px grey solid;
+    display: flex;
+    position: sticky;
+    top:11vh;
+}
+#side-menu ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+#top-part , #bottom-part{
+    width: 100%;
+}
+/* style lien */
+#side-menu ul a{
+    color: white;
+    text-decoration: none;
+}
+#top-part li, #bottom-part li{
+    text-align: center;
+    padding: 0.7em 0.6em;
+    margin: 0.1em 0.2em;
+    background: rgb(81, 81, 81);
+    display: flex;
+    justify-content: space-between;
+}
+/* style séparateur side menu */
+hr{
+    margin: 3px;
+}

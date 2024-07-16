@@ -1,0 +1,19 @@
+BDD : 
+    anime :
+        - id 
+        - nom [required] ok
+        - genre (options hard coder ?) [required] json
+        - nombre de saison 
+        - nombre d'épisode
+        - image [required]
+        - description 
+        - lien [required]
+        - site [required]
+API :
+    anime :
+        opérations :
+            getall()
+            getone()
+            post()
+            delete()
+            patch()

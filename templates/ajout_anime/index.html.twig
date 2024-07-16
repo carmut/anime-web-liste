@@ -1,0 +1,212 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ajouter un anime{% endblock %}
+
+{% block stylesheets %}
+    <link type='text/css' rel='stylesheet' href='{{asset('css/ajout.css')}}'>
+{% endblock %}
+
+{% block body %}
+
+
+<div id="ajout-container">
+    <h1> ajouter un anime </h1>
+
+    <hr>
+
+    {{ form_start(form, {'attr' : { 'id': 'form-add-anime' }}) }}
+    {# nom de l'anime #}
+        <div class='form-row'>
+            <div class="form-label" id="name-label">
+                <h2>nom de l'animé</h2>
+            </div>
+            <div class="form-error" id="name-error">
+                {{ form_errors(form.name) }}
+            </div>
+            <div class="form-champ" id="name-champ">
+                {{ form_widget(form.name) }}
+            </div>
+            <div class="form-help" id="name-help">
+                {{ form_help(form.name) }}
+            </div>
+        </div>
+
+    {# genre = select #}
+        <div class='form-row'>
+            <div class="form-label" id="genre-label">
+                <h2>Catégories</h2>
+                <p id='genre-help-choix'> vous pouvez en choisir plusieurs </p>
+            </div>
+            <div class="form-error" id="genre-error">
+                {{ form_errors(form.genre) }}
+            </div>
+            {% set currentGroup = null %}
+            {% for choice in form.genre %}
+                {% set group = choice.vars.attr['data-group'] %}
+                {% if group != currentGroup %}
+                    {% if currentGroup is not null %}
+                        </div>
+                    {% endif %}
+                    <div class="genre-group">
+                        <h3>{{ group }}</h3>
+                        {% set currentGroup = group %}
+                {% endif %}
+                <div class="custom-choice">
+                    {{ form_widget(choice) }}
+                    {{ form_label(choice) }}
+                </div>
+            {% endfor %}
+            </div>
+            <div class="form-help" id="genre-help">
+                {{ form_help(form.genre) }}
+            </div>
+        </div>
+
+    {# description #}
+        <div class='form-row'>
+            <div class="form-label" id="description-label">
+                <h2>synopsys</h2>
+            </div>
+            <div class="form-error" id="description-error">
+                {{ form_errors(form.description) }}
+            </div>
+            <div class="form-champ" id="description-champ">
+                {{ form_widget(form.description) }}
+            </div>
+            <div class="form-help" id="description-help">
+                {{ form_help(form.description) }}
+            </div>
+        </div>
+
+    {# statut = select #}
+        <div class='form-row'>
+            <div class="form-label" id="statut-label">
+                <h2>état de l'anime</h2>
+            </div>
+            <div class="form-error" id="statut-error">
+                {{ form_errors(form.statut) }}
+            </div>
+            <div class="form-champ" id="statut-champ">
+            {% for statut in form.statut %}
+                <div class='form-choice'>
+                    <div class='form-choice-widget'>{{ form_widget(statut) }}</div>
+                    <div class='form-choice-label'>{{ form_label(statut) }}</div>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="form-help" id="statut-help">
+                {{ form_help(form.statut) }}
+            </div>
+        </div>
+    
+    {# nombre épisode #}
+        <div class='form-row'>
+            <div class="form-label" id="episodeNumber-label">
+                <h2>Nombre d'épisode</h2>
+            </div>
+            <div class="form-error" id="episodeNumber-error">
+                {{ form_errors(form.episodeNumber) }}
+            </div>
+            <div class="form-champ" id="episodeNumber-champ">
+                {{ form_widget(form.episodeNumber) }}
+            </div>
+            <div class="form-help" id="episodeNumber-help">
+                {{ form_help(form.episodeNumber) }}
+            </div>
+        </div>
+    
+    {# site = select #}
+        <div class='form-row'>
+            <div class="form-label" id="site-label">
+                <h2>Site de diffusion</h2>
+            </div>
+            <div class="form-error" id="site-error">
+                {{ form_errors(form.site) }}
+            </div>
+            <div class="form-champ" id="site-champ">
+                {% for site in form.site %}
+                <div class='form-choice'>
+                    <div class='form-choice-widget'>{{ form_widget(site) }}</div>
+                    <div class='form-choice-label'>{{ form_label(site) }}</div>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="form-help" id="site-help">
+                {{ form_help(form.site) }}
+            </div>
+        </div>
+    
+    {# lien #}
+        <div class='form-row'>
+            <div class="form-label" id="lien-label">
+                <h2>lien de diffusion</h2>
+            </div>
+            <div class="form-error" id="lien-error">
+                {{ form_errors(form.lien) }}
+            </div>
+            <div class="form-champ" id="lien-champ">
+                {{ form_widget(form.lien) }}
+            </div>
+            <div class="form-help" id="lien-help">
+                {{ form_help(form.lien) }}
+            </div>
+        </div>
+    
+    {# lien de l'image #}
+        <div class='form-row'>
+            <div class="form-label" id="image_link-label">
+                <h2>lien de l'image</h2>
+            </div>
+            <div class="form-error" id="image_link-error">
+                {{ form_errors(form.image_link) }}
+            </div>
+            <div class="form-champ" id="image_link-champ">
+                {{ form_widget(form.image_link) }}
+            </div>
+            <div class="form-help" id="image_link-help">
+                {{ form_help(form.image_link) }}
+            </div>
+        </div>
+    
+    {# jour de sortie = select #}
+        <div class='form-row'>
+            <div class="form-label" id="day_episode_release-label">
+                <h2>jour de sortie d'épisode</h2>
+            </div>
+            <div class="form-error" id="day_episode_release-error">
+                {{ form_errors(form.day_episode_release) }}
+            </div>
+            <div class="form-champ" id="day_episode_release-champ">
+                {% for day in form.day_episode_release %}
+                    <div class='form-choice'>
+                        <div class='form-choice-widget'>{{ form_widget(day) }}</div>
+                        <div class='form-choice-label'>{{ form_label(day) }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="form-help" id="day_episode_release-help">
+                {{ form_help(form.day_episode_release) }}
+            </div>
+        </div>
+    
+    {# heure de sortie #}
+        <div class='form-row'>
+            <div class="form-label" id="hour_episode_release-label">
+                <h2>heure de sortie</h2>
+            </div>
+            <div class="form-error" id="hour_episode_release-error">
+                {{ form_errors(form.hour_episode_release) }}
+            </div>
+            <div class="form-champ" id="hour_episode_release-champ">
+                {{ form_widget(form.hour_episode_release) }}
+            </div>
+            <div class="form-help" id="hour_episode_release-help">
+                {{ form_help(form.hour_episode_release) }}
+            </div>
+        </div>
+        <div id='btn-add-anime'>
+            {{ form_widget(form.ajouter) }}
+        </div>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}accueil{% endblock %}
+
+{% block stylesheets %}
+    <link type='text/css' rel='stylesheet' href='{{asset('css/accueil.css')}}'>
+{% endblock %}
+
+{% block body %}
+    <style>
+        #accueil-presentation{
+            background-image: url({{pres_anime_image}});
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center
+        }
+        {% for site , couleur in liste_color_btn %}
+
+            .btn-site_{{ site }}{
+                background-color : {{couleur[0]}}
+            }
+
+            .btn-site_{{ site }} a{
+                color : {{couleur[1]}};
+                text-decoration: none;
+            }
+
+        {% endfor %}
+        
+
+    </style>
+    <div id="accueil-container">
+        <div id="accueil-presentation">
+            <div id="pres-text">
+                <h2 id='pres-titre'>{{pres_anime_titre}}</h2>
+                <p id='pres-descr'>{{pres_anime_description}}</p>
+                <button class="btn-site btn-site_{{pres_anime_site}}"><a href={{pres_anime_lien}} target="_blank">voir sur {{pres_anime_site}}</a></button>
+            </div>
+        </div>
+
+        {# liste anime parrution ojd #}
+            <h2 class='title-liste'>
+                sortie du jour
+            </h2>
+        <div id='today' class='liste'>
+            {% if liste_parrution_today|length == 0 %}
+                <p> aucune sortie prévue aujourd'hui</p>
+            {% endif %}
+            
+            {%for anime in liste_parrution_today %}
+                <div class='card'>
+                <div class='card-titre'>
+                    <h3> {{anime.Name}} </h3>
+                </div>
+                <div class='card-image'>
+                    <img src={{anime.ImageLink}}>
+                </div>
+                <div class='card-infos'>
+                <div>
+                    {% if anime.Statut == '1' %}
+                        <p class='mb'>état : en cour de parrution</p>
+                        <p>diffusion le 
+                        
+                            {# affichage du jour #}
+                            {% if anime.DayEpisodeRelease == 1 %}
+                                lundi
+                            {% elseif anime.DayEpisodeRelease == 2 %}
+                                mardi
+                            {% elseif anime.DayEpisodeRelease == 3 %}
+                                mercredi
+                            {% elseif anime.DayEpisodeRelease == 4 %}
+                                jeudi
+                            {% elseif anime.DayEpisodeRelease == 5 %}
+                                vendredi
+                            {% elseif anime.DayEpisodeRelease == 6 %}
+                                samedi
+                            {% else %}
+                                dimanche
+                            {% endif %}
+ 
+                        à</p>
+                        <p>{{anime.HourEpisodeRelease|date('h:i A')}} sur {{anime.Site}}</p>
+                    {% else %}
+                        <p class='mb'>état : sortit</p>
+                        <p>disponible sur {{anime.Site}}</p>
+                    {% endif %}
+                </div>
+                </div>
+                <div class='card-btn'>
+                    <button class="btn-site btn-site_{{anime.Site}}"><a href={{anime.Lien}} target="_blank">voir sur {{anime.Site}}</a></button>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {# liste anime parrution reste #}
+            <h2 class='title-liste'>
+                sortie du reste de la semaine
+            </h2>
+        <div id='other_day' class='liste'>
+            {% if liste_parrution_other_day|length == 0 %}
+                <p> aucune sortie prévue cette semaine</p>
+            {% endif %}
+            {%for anime in liste_parrution_other_day %}
+                <div class='card'>
+                <div class='card-titre'>
+                    <h3> {{anime.Name}} </h3>
+                </div>
+                <div class='card-image'>
+                    <img src={{anime.ImageLink}}>
+                </div>
+                <div class='card-infos'>
+                <div>
+                    {% if anime.Statut == '1' %}
+                        <p class='mb'>état : en cour de parrution</p>
+                        <p>diffusion le 
+                        
+                            {# affichage du jour #}
+                            {% if anime.DayEpisodeRelease == 1 %}
+                                lundi
+                            {% elseif anime.DayEpisodeRelease == 2 %}
+                                mardi
+                            {% elseif anime.DayEpisodeRelease == 3 %}
+                                mercredi
+                            {% elseif anime.DayEpisodeRelease == 4 %}
+                                jeudi
+                            {% elseif anime.DayEpisodeRelease == 5 %}
+                                vendredi
+                            {% elseif anime.DayEpisodeRelease == 6 %}
+                                samedi
+                            {% else %}
+                                dimanche
+                            {% endif %}
+ 
+                        à</p>
+                        <p>{{anime.HourEpisodeRelease|date('h:i A')}} sur {{anime.Site}}</p>
+                    {% else %}
+                        <p class='mb'>état : sortit</p>
+                        <p>disponible sur {{anime.Site}}</p>
+                    {% endif %}
+                </div>
+                </div>
+                <div class='card-btn'>
+                    <button class="btn-site btn-site_{{anime.Site}}"><a href={{anime.Lien}} target="_blank">voir sur {{anime.Site}}</a></button>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {# tout les animes #}
+            <h2 class='title-liste'>
+                tout les animes
+            </h2>
+        <div id="accueil-listes" class='liste'>
+            {%for anime in liste_animes %}
+                <div class='card'>
+                <div class='card-titre'>
+                    <h3> {{anime.Name}} </h3>
+                </div>
+                <div class='card-image'>
+                    <img src={{anime.ImageLink}}>
+                </div>
+                <div class='card-infos'>
+                <div>
+                    {% if anime.Statut == '1' %}
+                        <p class='mb'>état : en cour de parrution</p>
+                        <p>diffusion le 
+                        
+                            {# affichage du jour #}
+                            {% if anime.DayEpisodeRelease == 1 %}
+                                lundi
+                            {% elseif anime.DayEpisodeRelease == 2 %}
+                                mardi
+                            {% elseif anime.DayEpisodeRelease == 3 %}
+                                mercredi
+                            {% elseif anime.DayEpisodeRelease == 4 %}
+                                jeudi
+                            {% elseif anime.DayEpisodeRelease == 5 %}
+                                vendredi
+                            {% elseif anime.DayEpisodeRelease == 6 %}
+                                samedi
+                            {% else %}
+                                dimanche
+                            {% endif %}
+ 
+                        à</p>
+                        <p>{{anime.HourEpisodeRelease|date('h:i A')}} sur {{anime.Site}}</p>
+                    {% else %}
+                        <p class='mb'>état : sortit</p>
+                        <p>disponible sur {{anime.Site}}</p>
+                    {% endif %}
+                </div>
+                </div>
+                <div class='card-btn'>
+                    <button class="btn-site btn-site_{{anime.Site}}"><a href={{anime.Lien}} target="_blank">voir sur {{anime.Site}}</a></button>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

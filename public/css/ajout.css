@@ -1,0 +1,77 @@
+h1{
+    /* color : white; */
+    color: black;
+    text-align: center;
+}
+/* container global */
+#ajout-container{
+    flex-grow: 1;
+    border: solid 1px white;
+    background: white;
+    padding: 0em 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16em; /* a modifier si ajout footer*/
+    padding-bottom: 5em;
+}
+
+/* largeur formulaire */
+#form-add-anime{
+    width: 50%;
+}
+
+/* modification formulaire */
+
+/* espacement */
+.form-row{
+    padding: 1em;
+}
+
+/* largeur input/text area */
+.form-champ input, .form-champ textarea{
+    width: 96.5%;
+}
+
+/* hauteur text area */
+.form-champ textarea{
+    height: 12em;
+}
+
+/* style titres */
+.form-label h2, #genre-help-choix{
+    margin: 0;
+}
+.genre-group{
+    text-align: center;
+}
+
+/* select genre */
+.custom-choice{
+    display: flex;
+}
+#genre-help-choix{
+    font-style: italic;
+    font-size: 0.9em;
+    color: grey;
+}
+
+/* select */
+.form-choice{
+    display: flex;
+}
+
+.form-choice-widget{
+    margin-right: 1em;
+}
+
+/* bouton ajouter anime */
+#btn-add-anime{
+    display: flex;
+    justify-content: center;
+}
+
+#btn-add-anime button{
+    border-radius: 1.15em;
+    padding: 1em;
+}

@@ -1,0 +1,38 @@
+/* style navbar global */
+nav{
+    background: black ;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0.3em 1em;
+    position: sticky;
+    top: 0em;
+    z-index: 1000;
+}
+
+/* style des boutons de la navbar */
+#nav-left a, #nav-right a{
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 0.1em grey solid;
+    border-radius: 0.8em;
+}
+
+/* style partie gauche navbar */
+#nav-left{
+    display: flex;
+}
+
+/* style partie right navbar */
+#nav-right{
+    display: flex;
+}
+
+#logo{
+    width: 6em;
+    height: 3.em;
+}
