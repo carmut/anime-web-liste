@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HomePageController extends AbstractController
 {
-    #[Route('/home', name: 'app_home_page')]
+    #[Route('', name: 'app_home_page')]
     public function index(EntityManagerInterface $entityManager): Response
     {
         // récuperation liste des animes
