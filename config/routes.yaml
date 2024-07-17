@@ -7,5 +7,5 @@ index:
     path: /
     controller: App\Controller\HomePageController::index
 ajouter_anime:
-    path: /ajout/anime
-    controller: App\Controller\AjoutAnimeController::ajouter
+    path: /ajout
+    controller: App\Controller\AjoutAnimeController::index
