@@ -3,9 +3,11 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+    
 index:
     path: /
     controller: App\Controller\HomePageController::index
-ajouter_anime:
-    path: /ajout
-    controller: App\Controller\AjoutAnimeController::index
+
+# ajouter_anime:
+#     path: /ajout
+#     controller: App\Controller\AjoutAnimeController::index
