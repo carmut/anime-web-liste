@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AjoutAnimeController extends AbstractController
 {
-    #[Route('/ajout', name: 'app_ajout_anime')]
+    #[Route('', name: 'app_ajout_anime')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $anime = new Anime();
