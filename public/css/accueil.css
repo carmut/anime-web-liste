@@ -59,7 +59,8 @@
 }
 
 .card-image img{
-    width: 14em;
+    max-width: 14em;
+    height: 8em;
 }
 
 .card-img{
