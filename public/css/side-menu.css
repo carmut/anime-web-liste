@@ -1,7 +1,7 @@
 /* style global side-menu */
 #side-menu{
     background: black;
-    width: 60vw;
+    width: 25vw;
     height: 90vh;
     border-top: 1px grey solid;
     display: flex;
