@@ -2,3 +2,6 @@
     background: white;
     flex-grow: 1;
 }
+#container{
+    width: 10vw;
+}
