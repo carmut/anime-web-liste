@@ -7,6 +7,11 @@
     </div>
     
     <div id="nav-right">
-        <a href="{{ path('app_login') }}">connexion</a>
+        {% if app.user %}    
+            connecter en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">me deconnecter</a>    
+        {% endif %}
+        {% if app.user == null %}
+            <a href="{{ path('app_login') }}">connexion</a>
+        {% endif %}
     </div>
 </nav>
