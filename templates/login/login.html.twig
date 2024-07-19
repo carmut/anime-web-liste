@@ -14,31 +14,38 @@
             {% endif %}
 
             
-
-            <h1 class="h3 mb-3 font-weight-normal">Me connecter</h1>
-            <label for="username">nom d'utilisateur</label>
-            <input type="text" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="username" required autofocus>
-            <label for="password">mot de passe</label>
-            <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
-
-            <input type="hidden" name="_csrf_token"
-                value="{{ csrf_token('authenticate') }}"
-            >
-
-            {#
-                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                See https://symfony.com/doc/current/security/remember_me.html
-            #}
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> rester connecter
-                </label>
-            </div>
+            <div id='login-card'>
+                <div>
+                    <h1 class="h3 mb-3 font-weight-normal">Me connecter</h1>
+                <div>
+                <div>
+                    <label for="username" id="username-label">nom d'utilisateur</label>
+                    <input type="text" value="{{ last_username }}" name="_username" id="username-input" class="form-control" autocomplete="username" required autofocus>
+                <div>
+                <div>    
+                    <label for="password" id="password-label">mot de passe</label>
+                    <input type="password" name="_password" id="password-input" class="form-control" autocomplete="current-password" required>
+                <div>
             
+                <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}"
+                >
 
-            <button class="btn btn-lg btn-primary" type="submit">
-                connexion
-            </button>
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+                #}
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> rester connecter
+                    </label>
+                </div>
+                <div>
+                    <button class="btn btn-lg btn-primary" type="submit">
+                        connexion
+                    </button>
+                <div>
+            </div>
         </form>
     </div>
 {% endblock %}
