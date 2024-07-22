@@ -36,3 +36,11 @@ nav{
     width: 6em;
     height: 3.em;
 }
+
+#btn-deco #btn-co{
+    border: solid 1px black;
+}
+
+#msg-co{
+    color: white;
+}
