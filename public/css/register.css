@@ -1,0 +1,5 @@
+#register_container{
+    background: white;
+    flex-grow: 1;
+    width: 90vw;
+}
