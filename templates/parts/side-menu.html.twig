@@ -18,7 +18,7 @@
                     <span>mon compte</span> <span>👤</span>
                 </li>
             </a>
-            {% if is_granted("ROLE_ADMIN") %}
+            {% if is_granted('ROLE_ADMIN') %}
             <a class="link" href="{{ path('app_ajout_anime') }}">
                 <li>
                     <span>ajouter</span> <span>+</span>
