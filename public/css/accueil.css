@@ -1,6 +1,7 @@
 #accueil-container{
     flex-grow: 1;
     background: white;
+    width: 90vw;
 }
 
 /* anime presentation style */
