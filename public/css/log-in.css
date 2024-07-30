@@ -30,7 +30,7 @@
     justify-content: space-around;
 }
 
-#login-password #login-name{
+#login-password ,#login-name{
     display: flex;
     justify-content: space-between;
     padding: 0.5em 0;
