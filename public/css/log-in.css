@@ -21,3 +21,16 @@
     border-radius: 15px;
     padding: 1em;
 }
+
+#login-btn{
+    /* placement */
+    width: 40vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+#login-password{
+    display: flex;
+    justify-content: space-between;
+}
