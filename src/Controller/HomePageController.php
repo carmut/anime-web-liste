@@ -17,7 +17,7 @@ class HomePageController extends AbstractController
         $anime = $entityManager->getRepository(Anime::class)->findAll();
 
         // récupération liste en cour de parrution
-        $anime_parrution = $entityManager->getRepository(Anime::class)->findBy(array('statut' => 1));
+        $anime_parrution = $entityManager->getRepository(Anime::class)->findBy(array('statut' => 1),array('day_episode_release'=>'ASC','hour_episode_release'=> 'ASC'));
         // tableau liste sortie du jour
         $anime_parrution_today = [];
         // tableau liste sortie autre jour 
