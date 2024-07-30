@@ -3,3 +3,8 @@
     flex-grow: 1;
     width: 90vw;
 }
+
+#login-card{
+    display: flex;
+    justify-content: center;
+}
