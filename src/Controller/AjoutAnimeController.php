@@ -31,7 +31,8 @@ class AjoutAnimeController extends AbstractController
 
                 if ($response->getStatusCode() == 200) {
                     $imageContent = $response->getBody()->getContents();
-                    $imageName = basename($imageUrl);
+                    $extension = pathinfo($imageUrl, PATHINFO_EXTENSION);
+                    $imageName = uniqid() . '.' . $extension;
                     $imagePath = $this->getParameter('kernel.project_dir') . '/public/uploads/' . $imageName;
 
                     // Sauvegarder l'image sur le serveur
