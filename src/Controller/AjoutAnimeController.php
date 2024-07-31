@@ -25,22 +25,26 @@ class AjoutAnimeController extends AbstractController
             $imageUrl = $anime->getImageLink();
 
             // Validation de l'URL de l'image
-            if (filter_var($imageUrl, FILTER_VALIDATE_URL) && preg_match('/\.(jpg|jpeg|png|gif)$/i', $imageUrl)) {
+            if (filter_var($imageUrl, FILTER_VALIDATE_URL)) {
                 $client = new Client();
-                $response = $client->get($imageUrl);
+                $response = $client->get($imageUrl, ['stream' => true]);
 
                 if ($response->getStatusCode() == 200) {
-                    $imageContent = $response->getBody()->getContents();
-                    $extension = pathinfo($imageUrl, PATHINFO_EXTENSION);
-                    $imageName = uniqid() . '.' . $extension;
-                    $imagePath = $this->getParameter('kernel.project_dir') . '/public/uploads/' . $imageName;
+                    $contentType = $response->getHeaderLine('Content-Type');
+                    $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+                    if (in_array($contentType, $allowedTypes)) {
+                        $extension = explode('/', $contentType)[1];
+                        $imageName = uniqid() . '.' . $extension;
+                        $imagePath = $this->getParameter('kernel.project_dir') . '/public/images/' . $imageName;
 
-                    // Sauvegarder l'image sur le serveur
-                    file_put_contents($imagePath, $imageContent);
+                        // Sauvegarder l'image sur le serveur
+                        file_put_contents($imagePath, $response->getBody()->getContents());
 
-                    // Mettre à jour l'URL de l'image avec le chemin local
-                    $anime->setImageLink('/images/' . $imageName);
-
+                        // Mettre à jour l'URL de l'image avec le chemin local
+                        $anime->setImageLink('/images/' . $imageName);
+                    } else {
+                        $this->addFlash('error', 'Le type de fichier n\'est pas supporté.');
+                    }
                 } else {
                     $this->addFlash('error', 'Impossible de télécharger l\'image.');
                 }
