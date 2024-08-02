@@ -7,23 +7,41 @@
 {% endblock %}
 
 {% block body %}
-    <div id='register_container'>
-        <h1>Register</h1>
-        {{ form_errors(registrationForm) }}
 
+    <div id='register-card'>
+        <div>
+            <h1 class="h3 mb-3 font-weight-normal">création d'un compte</h1>
+        </div>
+        {{ form_errors(registrationForm) }}
         {{ form_start(registrationForm) }}
-            <div>
-                {{ form_row(registrationForm.username) }}
+        <div id='register-input'>
+            <div id='register-name'>
+                {{ form_widget(registrationForm.username,{
+                    label: "nom d'utilisateur"
+                }) }}
             </div>
-            <div>
-                {{ form_row(registrationForm.plainPassword, {
-                    label: 'Password'
+            <div id='register-password'>    
+                {{ form_widget(registrationForm.plainPassword,{
+                    label: "mot de passe"
+                }) }}
+            </div>
+        </div>
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+        >
+        <div id='register-btn'>
+            <div class="checkbox mb-3">
+                {{ form_row(registrationForm.agreeTerms,{
+                    label: "accepter les conditions"
                 }) }}
             </div>
             <div>
-                {{ form_row(registrationForm.agreeTerms) }}
+                <button class="btn btn-lg btn-primary" type="submit">
+                    creer le compte
+                </button>
             </div>
-            <button type="submit" class="btn">Register</button>
+        </div>
         {{ form_end(registrationForm) }}
     </div>
+
 {% endblock %}

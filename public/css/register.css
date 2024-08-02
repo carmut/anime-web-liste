@@ -1,5 +1,41 @@
 #register_container{
+    /* style */
     background: white;
     flex-grow: 1;
     width: 90vw;
+    /* placement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-card{
+    /* placement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* style */
+    border: black 1px solid;
+    width: fit-content;
+    margin: 1em;
+    border-radius: 15px;
+    padding: 1em;
+}
+
+#register-btn{
+    /* placement */
+    width: 40vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+#register-password ,#register-name{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0;
+}
+
+#register-input{
+    padding-bottom: 2em;
 }
