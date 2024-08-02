@@ -5,9 +5,11 @@ namespace App\Form;
 use App\Entity\Anime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class AnimeAddType extends AbstractType
 {
@@ -70,7 +72,23 @@ class AnimeAddType extends AbstractType
                 'choices' => $site,
                 'expanded' => true,
             ])
-            ->add('image_link')
+            ->add('image_link', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'application/jpeg',
+                            'application/png',
+                            'application/jpe',
+                            'application/avif',
+                            'application/jpg'
+                        ],
+                        'mimeTypesMessage' => 'selectionner une image valide',
+                    ])
+                ]
+            ])
             ->add('statut', ChoiceType::class, [
                 'choices' => $statut,
                 'expanded' => true,
