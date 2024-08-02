@@ -36,6 +36,12 @@
     padding: 0.5em 0;
 }
 
+#register-password div, #register-name div{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
 #register-input{
     padding-bottom: 2em;
 }
