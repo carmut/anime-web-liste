@@ -107,6 +107,8 @@
 
 .title-liste{
     margin: 0;
-    margin-left: 1em;
+    padding: 1em 2em;
+    text-align: center;
+    font-size: 3em;
 
 }
