@@ -103,6 +103,7 @@
     align-content: space-around;
     justify-content: flex-start;
     padding: 2em;
+    border-bottom: black solid 1em;
 }
 
 .title-liste{
@@ -110,5 +111,6 @@
     padding: 1em 2em;
     text-align: center;
     font-size: 3em;
+
 
 }
