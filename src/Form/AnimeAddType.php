@@ -78,11 +78,11 @@ class AnimeAddType extends AbstractType
                 'constraints' => [
                     new File([
                         'mimeTypes' => [
-                            'application/jpeg',
-                            'application/png',
-                            'application/jpe',
-                            'application/avif',
-                            'application/jpg'
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpe',
+                            'image/avif',
+                            'image/jpg'
                         ],
                         'mimeTypesMessage' => 'selectionner une image valide',
                     ])
