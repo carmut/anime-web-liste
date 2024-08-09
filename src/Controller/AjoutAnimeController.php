@@ -39,7 +39,7 @@ class AjoutAnimeController extends AbstractController
                 }
             }
 
-            $anime->setImageLink($newFilename);
+            $anime->setImageLink('images/imageanime/'+$newFilename);
 
             // fin upload
             $entityManager->persist($anime);
