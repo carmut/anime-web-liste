@@ -14,8 +14,8 @@ class InfosController extends AbstractController
     #[Route('/infos/{id}', name: 'app_infos')]
     public function index(string $id,EntityManagerInterface $entityManager): Response
     {   
-        $id = (string) $id;
-        $Anime = $entityManager->getRepository(Anime::class)->findBy([$id]);
+        $id = (int) $id;
+        $Anime = $entityManager->getRepository(Anime::class)->findBy(['id' => $id]);
         $infosAnime = $Anime[0];
 
         $titre = $infosAnime->getName();
