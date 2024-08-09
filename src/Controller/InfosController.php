@@ -12,8 +12,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class InfosController extends AbstractController
 {
     #[Route('/infos/{id}', name: 'app_infos')]
-    public function index(NumberType $id,EntityManagerInterface $entityManager): Response
-    {
+    public function index(string $id,EntityManagerInterface $entityManager): Response
+    {   
+        $id = (int) $id;
         $Anime = $entityManager->getRepository(Anime::class)->findBy([$id]);
         $infosAnime = $Anime[0];
 
