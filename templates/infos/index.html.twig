@@ -30,7 +30,33 @@
     {{statut}}
 </p>
 <p>
-    {{day}}
+    {% if statut == '1' %}
+        <p class='mb'>état : en cour de parrution</p>
+            <p>diffusion le 
+                        
+                {# affichage du jour #}
+                {% if day == 1 %}
+                    lundi
+                {% elseif day == 2 %}
+                    mardi
+                {% elseif day == 3 %}
+                    mercredi
+                {% elseif day == 4 %}
+                    jeudi
+                {% elseif day == 5 %}
+                    vendredi
+                {% elseif day == 6 %}
+                    samedi
+                {% else %}
+                    dimanche
+                {% endif %}
+ 
+                    à</p>
+                    <p>{{hour|date('h:i A')}} sur {{site}}</p>
+                {% else %}
+                    <p class='mb'>état : sortit</p>
+                    <p>disponible sur {{site}}</p>
+                {% endif %}
 </p>
 <p>
     {{hour}}
