@@ -46,7 +46,15 @@
                 {% else %}
                     dimanche
                 {% endif %}
-                à {{hour|date('h:i A')}}
+                à 
+                {% if hour|date('A') == 'PM' %}
+                    {{hour|date('h:i')}} heure de l'aprés-midi
+                {% else %}
+                    {{hour|date('h:i')}} Heure du matin
+                {% endif %}
+                
+                
+                
             </p>
         </div>
     {% else %}
