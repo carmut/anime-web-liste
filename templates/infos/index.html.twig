@@ -18,13 +18,13 @@
             {{titre}}
         </h2>
     </div>
+    <div id="infos-image">
+        <img src={{asset(image)}}>
+    </div>
     <div id="infos-description">
         <p>
             {{description}}
         </p>
-    </div>
-    <div id="infos-image">
-        <img src={{asset(image)}}>
     </div>
     {# infos etat #}
     {% if statut == '1' %}
@@ -71,8 +71,6 @@
             </btn>
         </a>
     </div>
-    
-
 
     <div id="infos-edit">
         {# btn edit #}
