@@ -27,39 +27,10 @@
         <img src={{asset(image)}}>
     </div>
     {# infos etat #}
-    <div id="infos-encour">
-        {# etat = 1 #}
-    </div>
-    <div id="infos-termine">
-        {# etat = 0 #}
-    </div>
-    {# btn #}
-    <div id="infos-watch">
-        <a href={{lien}}>
-            <btn>
-                regarder sur {{site}}
-            </btn>
-        </a>
-    </div>
-    <div id="infos-edit">
-        {# btn edit #}
-    </div>
-    <div id="infos-delete">
-        {# btn delete #}
-    </div>
-
-</div>
-{# séparation : a integret #}
-<br>
-<p>
-    {{statut}}
-</p>
-<p>
     {% if statut == '1' %}
-        <p class='mb'>état : en cour de parrution</p>
-            <p>diffusion le 
-                        
-                {# affichage du jour #}
+        <div id="infos-encour">
+            <p>
+                Une saison est en cour de diffusion sur {{site}}, les épisodes sorte le 
                 {% if day == 1 %}
                     lundi
                 {% elseif day == 2 %}
@@ -75,17 +46,34 @@
                 {% else %}
                     dimanche
                 {% endif %}
- 
-                    à</p>
-                    <p>{{hour|date('h:i A')}} sur {{site}}</p>
-                {% else %}
-                    <p class='mb'>état : sortit</p>
-                    <p>disponible sur {{site}}</p>
-                {% endif %}
-</p>
+                à {{hour|date('h:i A')}}
+            </p>
+        </div>
+    {% else %}
+        <div id="infos-termine">
+            Il n'y a aucune saison en cour de diffusion pour l'instant, il y a actuellement {{episodes}} disponible sur {{site}}
+        </div>
+    {% endif %}
 
-<p>
-    {{episodes}}
-</p>
+    {# btn #}
+    <div id="infos-watch">
+        <a href={{lien}}>
+            <btn>
+                regarder sur {{site}}
+            </btn>
+        </a>
+    </div>
+    
+
+
+    <div id="infos-edit">
+        {# btn edit #}
+    </div>
+    <div id="infos-delete">
+        {# btn delete #}
+    </div>
+
+</div>
+
 
 {% endblock %}
