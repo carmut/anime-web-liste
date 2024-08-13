@@ -21,3 +21,13 @@
     justify-content: center;
     font-size: larger;
 }
+
+#infos-image{
+    display: flex;
+    justify-content: center;
+}
+
+#infos-image img{
+    height: auto;
+    width: 44vw;
+}
