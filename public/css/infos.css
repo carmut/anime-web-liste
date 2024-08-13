@@ -74,61 +74,61 @@
 
 /* couleur bouton watch */
 
-#info-watch-crunchyroll{
+#infos-watch-crunchyroll{
     background-color : #f47521
 }
 
-#info-watch-crunchyroll a{
+#infos-watch-crunchyroll a{
     color : #141519;
     text-decoration: none;
 }
 
 
-#info-watch-netflix{
+#infos-watch-netflix{
     background-color : #e50914
 }
 
-#info-watch-netflix a{
+#infos-watch-netflix a{
     color : #141519;
     text-decoration: none;
 }
 
 
-#info-watch-amazon{
+#infos-watch-amazon{
     background-color : #00a8e1
 }
 
-#info-watch-amazon a{
+#infos-watch-amazon a{
     color : #141519;
     text-decoration: none;
 }
 
 
-#info-watch-disney{
+#infos-watch-disney{
     background-color : #113ccf
 }
 
-#info-watch-disney a{
+#infos-watch-disney a{
     color : #141519;
     text-decoration: none;
 }
 
 
-#info-watch-youtube{
+#infos-watch-youtube{
     background-color : #ff0000
 }
 
-#info-watch-youtube a{
+#infos-watch-youtube a{
     color : #141519;
     text-decoration: none;
 }
 
 
-#info-watch-adn{
+#infos-watch-adn{
     background-color : #0095ff
 }
 
-#info-watch-adn a{
+#infos-watch-adn a{
     color : #141519;
     text-decoration: none;
 }
