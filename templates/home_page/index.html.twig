@@ -88,7 +88,7 @@
                 </div>
                 <div class='card-btn'>
                     <button class="btn-site btn-site_{{anime.Site}}"><a href={{anime.Lien}} target="_blank">voir sur {{anime.Site}}</a></button>
-                    <button class="btn-site btn-site_{{anime.site}}"><a href={{path('app_infos',{'id' : {{anime.id}}})}}> plus d'information </a></button>
+                    <button class="btn-site btn-site_{{anime.site}}"><a href={{path('app_infos',['id' : anime.id])}}> plus d'information </a></button>
                 </div>
                 </div>
             {% endfor %}
