@@ -45,3 +45,21 @@
     text-decoration: none;
     color: black;
 }
+
+/* placement bouton */
+#boutons{
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    justify-content: space-between;
+}
+
+#ligne-haut{
+    display: flex;
+    justify-content: center;
+}
+
+#ligne-bas{
+    display: flex;
+    justify-content: space-around;
+}
