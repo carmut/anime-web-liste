@@ -46,6 +46,14 @@
     color: black;
 }
 
+#infos-edit{
+    background-color: orange;
+}
+
+#infos-delete{
+    background-color: red;
+}
+
 /* placement bouton */
 #boutons{
     display: flex;
