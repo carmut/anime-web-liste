@@ -31,3 +31,17 @@
     height: auto;
     width: 44vw;
 }
+
+/* style 3 boutons */
+.bouton{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.75em;
+    border: 1px solid black;
+    border-radius: 2em;
+}
+
+.bouton a{
+    text-decoration: none;
+    color: black;
+}
