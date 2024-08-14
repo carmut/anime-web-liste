@@ -26,7 +26,7 @@
     {% if statut == '1' %}
         <div id="infos-encour">
             <p>
-                Une saison est en cour de diffusion sur {{site}}, les épisodes sorte le 
+                Une saison est en cour de diffusion sur {{site}},<br> les épisodes sorte le 
                 {% if day == 1 %}
                     lundi
                 {% elseif day == 2 %}
@@ -55,7 +55,7 @@
         </div>
     {% else %}
         <div id="infos-termine">
-            Il n'y a aucune saison en cour de diffusion pour l'instant, il y a actuellement {{episodes}} disponible sur {{site}}
+            Il n'y a aucune saison en cour de diffusion pour l'instant, <br> il y a actuellement {{episodes}} disponible sur {{site}}
         </div>
     {% endif %}
 
