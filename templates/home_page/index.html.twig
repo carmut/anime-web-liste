@@ -34,7 +34,10 @@
             <div id="pres-text">
                 <h2 id='pres-titre'>{{pres_anime_titre}}</h2>
                 <p id='pres-descr'>{{pres_anime_description}}</p>
-                <button class="btn-site btn-site_{{pres_anime_site}}"><a href={{pres_anime_lien}} target="_blank">voir sur {{pres_anime_site}}</a></button>
+                <div id='pres_btn'>
+                    <button class="btn-site btn-site_{{pres_anime_site}}"><a href={{pres_anime_lien}} target="_blank">voir sur {{pres_anime_site}}</a></button>
+                    <button class="btn-site btn-site_{{pres_anime_site}}"><a href={{path('app_infos',{'id' : pres_id})}}> plus d'information </a></button>
+                </div>
             </div>
         </div>
 

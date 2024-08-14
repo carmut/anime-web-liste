@@ -40,7 +40,7 @@ class HomePageController extends AbstractController
         $pres_image = $anime_pres->getImageLink();
         $pres_link  = $anime_pres->getLien();
         $pres_site  = $anime_pres->getSite();
-        
+        $pres_id    = $anime_pres->getId();
         // définition couleur du bouton ['couleur btn' , 'couleur texte']
         $liste_couleur_btn = [
             'crunchyroll' => ['#f47521','#141519'],
@@ -61,6 +61,7 @@ class HomePageController extends AbstractController
             'liste_animes' => $anime,
             'liste_parrution_today' => $anime_parrution_today,
             'liste_parrution_other_day' => $anime_parrution_other_day,
+            'pres_id' => $pres_id,
         ]);
     }
 }
