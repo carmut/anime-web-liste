@@ -42,6 +42,11 @@
     text-decoration: none;
 }
 
+#pres_btn{
+    display: flex;
+    flex-direction: column;
+}
+
 /* card anime */
 .card{
     border: solid black 1.5px;
