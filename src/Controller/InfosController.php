@@ -39,6 +39,7 @@ class InfosController extends AbstractController
             'day' =>  $day,
             'hour' =>  $hour,
             'episodes' =>  $episodes,
+            'id' => $id,
         ]);
     }
 }
